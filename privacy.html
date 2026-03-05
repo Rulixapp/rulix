@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rulix — Gizlilik Politikası / Privacy Policy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    background: #0E1014; color: #D0D3DB; line-height: 1.75;
+    padding: 40px 20px 60px; max-width: 720px; margin: 0 auto;
+  }
+  h1 { font-size: 26px; font-weight: 800; color: #F5F5F7; margin-bottom: 6px; }
+  .badge { display: inline-flex; font-size: 13px; font-weight: 700; color: #00D4F0; background: rgba(0,212,240,0.08); padding: 4px 12px; border-radius: 6px; margin-bottom: 20px; }
+  .updated { font-size: 13px; color: #6E7486; margin-bottom: 32px; }
+  h2 { font-size: 17px; font-weight: 700; color: #F5F5F7; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  h3 { font-size: 15px; font-weight: 700; color: #E0E2E8; margin: 18px 0 8px; }
+  p { font-size: 14px; color: #A8ADBB; margin-bottom: 12px; }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { font-size: 14px; color: #A8ADBB; margin-bottom: 5px; }
+  strong { color: #D0D3DB; }
+  a { color: #00D4F0; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th, td { text-align: left; padding: 8px 12px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  th { color: #F5F5F7; font-weight: 700; background: rgba(255,255,255,0.03); }
+  td { color: #A8ADBB; }
+  .lang-switch { text-align: right; margin-bottom: 20px; }
+  .lang-switch a { font-size: 13px; padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.06); margin-left: 6px; cursor: pointer; }
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: #6E7486; text-align: center; }
+  .section-en { display: none; }
+</style>
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.section-tr').forEach(el => el.style.display = lang === 'tr' ? 'block' : 'none');
+  document.querySelectorAll('.section-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+}
+</script>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a onclick="switchLang('tr')">Türkçe</a>
+  <a onclick="switchLang('en')">English</a>
+</div>
+<div class="badge">Rulix</div>
+
+<!-- TÜRKÇE -->
+<div class="section-tr">
+<h1>Gizlilik Politikası</h1>
+<p class="updated">Yürürlük tarihi: 5 Mart 2026 — Son güncelleme: 5 Mart 2026</p>
+
+<h2>1. Veri Sorumlusu</h2>
+<p>Harun Can Ayaz (Bağımsız Geliştirici)<br>İstanbul, Türkiye<br>E-posta: <a href="mailto:rulix.app@gmail.com">rulix.app@gmail.com</a></p>
+
+<h2>2. Uygulamanın Kapsamı</h2>
+<p>Rulix, iOS platformunda 8 farklı ölçüm aracı sunan bir uygulamadır: Cetvel, Su Terazisi, Açıölçer, Pusula (ücretsiz) ve Kamera Metre (AR), Gürültü Ölçer, Hız Ölçer, Titreşim Ölçer (premium abonelik).</p>
+
+<h2>3. Toplanan Veriler ve Amaçları</h2>
+
+<h3>3.1. Cihazda Yerel Olarak Saklanan Veriler</h3>
+<p>Aşağıdaki veriler yalnızca cihazınızda saklanır, hiçbir sunucuya iletilmez ve uygulamayı sildiğinizde tamamen silinir:</p>
+<table>
+  <tr><th>Veri</th><th>Amaç</th><th>Saklama Yöntemi</th></tr>
+  <tr><td>Ölçüm geçmişi</td><td>Geçmiş ölçümleri görüntüleme</td><td>UserDefaults (JSON)</td></tr>
+  <tr><td>Uygulama ayarları</td><td>Dil, ses, titreşim tercihleri</td><td>UserDefaults</td></tr>
+  <tr><td>Abonelik durumu</td><td>Premium erişim kontrolü</td><td>iOS Keychain (şifreli)</td></tr>
+  <tr><td>Onboarding durumu</td><td>İlk kullanım rehberi</td><td>UserDefaults</td></tr>
+</table>
+
+<h3>3.2. Sensör Verileri</h3>
+<p>Ölçüm araçları cihaz sensörlerine erişir. Bu veriler yalnızca gerçek zamanlı ölçüm için kullanılır, kaydedilmez ve hiçbir sunucuya gönderilmez:</p>
+<table>
+  <tr><th>Sensör</th><th>Kullanan Araç</th><th>Erişim Amacı</th></tr>
+  <tr><td>Kamera (ARKit)</td><td>Kamera Metre</td><td>AR ile mesafe ölçümü</td></tr>
+  <tr><td>İvmeölçer / Jiroskop</td><td>Su Terazisi, Açıölçer, Titreşim Ölçer</td><td>Eğim, açı ve titreşim ölçümü</td></tr>
+  <tr><td>Mikrofon</td><td>Gürültü Ölçer</td><td>Ortam ses seviyesi (dB) ölçümü</td></tr>
+  <tr><td>GPS / Konum</td><td>Hız Ölçer, Pusula</td><td>Hız takibi ve yön bulma</td></tr>
+  <tr><td>Manyetometre</td><td>Pusula</td><td>Manyetik kuzey tespiti</td></tr>
+</table>
+<p><strong>Önemli:</strong> Mikrofon verileri ses kaydı yapılmadan yalnızca desibel seviyesi hesaplamak için kullanılır. Hiçbir ses kaydı oluşturulmaz, saklanmaz veya iletilmez. Konum verileri yalnızca anlık hız hesaplamak için kullanılır, konum geçmişi tutulmaz.</p>
+
+<h3>3.3. Üçüncü Taraf Hizmetleri</h3>
+<p><strong>Firebase Crashlytics (Google LLC)</strong></p>
+<ul>
+  <li>Amaç: Uygulama çökmelerini tespit etme ve düzeltme</li>
+  <li>Toplanan: Çökme raporları, cihaz modeli, iOS versiyonu, uygulama versiyonu</li>
+  <li>Kişisel veri toplanmaz</li>
+  <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Gizlilik Politikası</a></li>
+</ul>
+<p><strong>Firebase Analytics (Google LLC)</strong></p>
+<ul>
+  <li>Amaç: Anonim kullanım istatistikleri</li>
+  <li>Toplanan: Anonim kullanıcı kimliği, oturum bilgileri, ekran görüntülenmeleri, cihaz kategorisi, ülke</li>
+  <li>IP adresi saklanmaz, kişisel veri toplanmaz</li>
+  <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Gizlilik Politikası</a></li>
+</ul>
+<p><strong>Apple StoreKit</strong></p>
+<ul>
+  <li>Amaç: Abonelik ve satın alma işlemleri</li>
+  <li>Tamamen Apple tarafından yönetilir, Rulix ödeme bilgilerine erişemez</li>
+  <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Gizlilik Politikası</a></li>
+</ul>
+
+<h3>3.4. Toplanmayan Veriler</h3>
+<p>Rulix aşağıdaki verileri <strong>kesinlikle toplamaz</strong>:</p>
+<ul>
+  <li>Ad, soyad, e-posta adresi veya telefon numarası</li>
+  <li>Fotoğraf, video veya ses kaydı</li>
+  <li>Kişi listesi veya rehber bilgileri</li>
+  <li>Tarama geçmişi veya arama verileri</li>
+  <li>Sağlık veya finansal veriler</li>
+  <li>Reklam kimliği (IDFA) — Rulix reklam göstermez</li>
+  <li>Konum geçmişi — yalnızca anlık konum kullanılır</li>
+</ul>
+
+<h2>4. Veri Paylaşımı ve Aktarımı</h2>
+<p>Kişisel verilerinizi üçüncü taraflarla satmıyor, kiralamıyor veya ticari amaçla paylaşmıyoruz. Firebase tarafından toplanan anonim veriler Google'ın sunucularında işlenir. Bu aktarım Google'ın Standart Sözleşme Maddeleri (SCC) kapsamında gerçekleşir.</p>
+
+<h2>5. Veri Saklama Süreleri</h2>
+<ul>
+  <li><strong>Cihaz verileri:</strong> Uygulamayı silene kadar</li>
+  <li><strong>Crashlytics verileri:</strong> 90 gün</li>
+  <li><strong>Analytics verileri:</strong> 14 ay</li>
+  <li><strong>Abonelik verileri:</strong> Apple tarafından yönetilir</li>
+</ul>
+
+<h2>6. Kullanıcı Hakları</h2>
+
+<h3>KVKK Kapsamında (Türkiye — 6698 Sayılı Kanun)</h3>
+<ul>
+  <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+  <li>İşlenmişse buna ilişkin bilgi talep etme</li>
+  <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+  <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri öğrenme</li>
+  <li>Eksik veya yanlış işlenmiş verilerin düzeltilmesini isteme</li>
+  <li>Verilerin silinmesini veya yok edilmesini isteme</li>
+  <li>Otomatik sistemler vasıtasıyla analiz sonucu aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+  <li>Kanuna aykırı işleme nedeniyle zararın giderilmesini talep etme</li>
+</ul>
+<p>KVKK başvuruları için yanıt süresi en geç 30 gündür.</p>
+
+<h3>GDPR Kapsamında (Avrupa Birliği)</h3>
+<ul>
+  <li>Erişim hakkı (Madde 15)</li>
+  <li>Düzeltme hakkı (Madde 16)</li>
+  <li>Silme hakkı / Unutulma hakkı (Madde 17)</li>
+  <li>İşlemenin kısıtlanması hakkı (Madde 18)</li>
+  <li>Veri taşınabilirliği hakkı (Madde 20)</li>
+  <li>İtiraz hakkı (Madde 21)</li>
+</ul>
+
+<h3>Verilerinizi Silme</h3>
+<p>Rulix → Ayarlar → Tüm Verileri Sil ile tüm yerel verileri silebilirsiniz. Uygulamayı cihazınızdan sildiğinizde tüm yerel veriler otomatik silinir. Firebase'deki anonim veriler için <a href="mailto:rulix.app@gmail.com">rulix.app@gmail.com</a> adresine yazabilirsiniz.</p>
+
+<h2>7. Çocukların Gizliliği</h2>
+<p>Rulix, 13 yaşın altındaki çocuklardan (AB'de 16 yaş) bilerek kişisel veri toplamaz. Uygulama hesap oluşturma gerektirmez. Ebeveynler ihlal fark ederse lütfen iletişime geçsin; veriler derhal silinir.</p>
+
+<h2>8. Güvenlik Önlemleri</h2>
+<ul>
+  <li>Abonelik durumu iOS Keychain ile şifreli saklanır</li>
+  <li>Uygulama bütünlüğü Apple App Attest ile doğrulanır</li>
+  <li>Jailbreak tespiti ile güvenlik ihlali olan cihazlarda premium erişim engellenir</li>
+  <li>Sunucu taraflı veri saklama yapılmaz — veri ihlali riski minimumdur</li>
+  <li>Tüm üçüncü taraf iletişimi HTTPS/TLS şifreleme ile korunur</li>
+</ul>
+
+<h2>9. Reklam ve İzleme</h2>
+<p>Rulix reklam göstermez, reklam ağlarıyla veri paylaşmaz ve IDFA erişimi kullanmaz. App Tracking Transparency (ATT) izni talep edilmez.</p>
+
+<h2>10. Politika Değişiklikleri</h2>
+<p>Bu politikayı gerektiğinde güncelleyebiliriz. Önemli değişiklikler uygulama içi bildirim veya bu sayfa üzerinden duyurulur.</p>
+
+<h2>11. İletişim</h2>
+<p>Harun Can Ayaz<br>E-posta: <a href="mailto:rulix.app@gmail.com">rulix.app@gmail.com</a><br>İstanbul, Türkiye</p>
+</div>
+
+<!-- ENGLISH -->
+<div class="section-en">
+<h1>Privacy Policy</h1>
+<p class="updated">Effective date: March 5, 2026 — Last updated: March 5, 2026</p>
+
+<h2>1. Data Controller</h2>
+<p>Harun Can Ayaz (Independent Developer)<br>Istanbul, Turkey<br>Email: <a href="mailto:rulix.app@gmail.com">rulix.app@gmail.com</a></p>
+
+<h2>2. Application Scope</h2>
+<p>Rulix is an iOS measurement application offering 8 tools: Ruler, Level, Protractor, Compass (free) and AR Measure, Noise Meter, Speedometer, Vibration Meter (premium subscription).</p>
+
+<h2>3. Data Collection and Purposes</h2>
+
+<h3>3.1. Data Stored Locally on Device</h3>
+<p>The following data is stored only on your device, never transmitted to any server, and completely deleted when you uninstall the app:</p>
+<ul>
+  <li>Measurement history (UserDefaults, JSON)</li>
+  <li>App preferences: language, sound, haptic settings (UserDefaults)</li>
+  <li>Subscription status (encrypted in iOS Keychain)</li>
+  <li>Onboarding completion flag (UserDefaults)</li>
+</ul>
+
+<h3>3.2. Sensor Data</h3>
+<p>Measurement tools access device sensors for real-time measurements only. Sensor data is never recorded or transmitted:</p>
+<ul>
+  <li><strong>Camera (ARKit):</strong> AR Measure — distance measurement via augmented reality</li>
+  <li><strong>Accelerometer / Gyroscope:</strong> Level, Protractor, Vibration Meter</li>
+  <li><strong>Microphone:</strong> Noise Meter — ambient dB level only. No audio recorded, stored, or transmitted.</li>
+  <li><strong>GPS / Location:</strong> Speedometer, Compass — instantaneous speed/direction only. No location history kept.</li>
+  <li><strong>Magnetometer:</strong> Compass — magnetic north detection</li>
+</ul>
+
+<h3>3.3. Third-Party Services</h3>
+<p><strong>Firebase Crashlytics (Google LLC)</strong> — Crash detection and debugging. Collects crash reports, device model, OS version. No personal data. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></p>
+<p><strong>Firebase Analytics (Google LLC)</strong> — Anonymous usage statistics. Collects anonymous user ID, session info, screen views, device category, country. IP not stored. No personal data. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></p>
+<p><strong>Apple StoreKit</strong> — Subscription management. Managed entirely by Apple. Rulix has no access to payment data. <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a></p>
+
+<h3>3.4. Data We Do NOT Collect</h3>
+<ul>
+  <li>Name, email, or phone number</li>
+  <li>Photos, videos, or audio recordings</li>
+  <li>Contact lists</li>
+  <li>Browsing or search history</li>
+  <li>Health or financial data</li>
+  <li>Advertising identifier (IDFA) — no ads shown</li>
+  <li>Location history — only instantaneous location used</li>
+</ul>
+
+<h2>4. Data Sharing</h2>
+<p>We do not sell, rent, or share personal data. Anonymous Firebase data is processed on Google servers under Standard Contractual Clauses (SCCs).</p>
+
+<h2>5. Data Retention</h2>
+<ul>
+  <li><strong>Device data:</strong> Until app deletion</li>
+  <li><strong>Crashlytics:</strong> 90 days</li>
+  <li><strong>Analytics:</strong> 14 months</li>
+  <li><strong>Subscriptions:</strong> Managed by Apple</li>
+</ul>
+
+<h2>6. Your Rights</h2>
+<h3>Under GDPR (EU)</h3>
+<ul>
+  <li>Right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction (Art. 18), portability (Art. 20), objection (Art. 21)</li>
+</ul>
+<h3>Under KVKK (Turkey)</h3>
+<p>Turkish residents have equivalent rights under Law No. 6698, including access, correction, deletion, and objection rights. Response time: max 30 days.</p>
+<h3>Deleting Your Data</h3>
+<p>Rulix → Settings → Delete All Data. Uninstalling removes all local data. For Firebase data: <a href="mailto:rulix.app@gmail.com">rulix.app@gmail.com</a></p>
+
+<h2>7. Children's Privacy</h2>
+<p>Rulix does not knowingly collect data from children under 13 (16 in EU). No account creation required. Parents: contact us to delete data.</p>
+
+<h2>8. Security</h2>
+<ul>
+  <li>Subscription encrypted via iOS Keychain</li>
+  <li>App integrity via Apple App Attest</li>
+  <li>Jailbreak detection blocks unauthorized premium access</li>
+  <li>No server-side storage minimizes breach risk</li>
+  <li>All third-party communication via HTTPS/TLS</li>
+</ul>
+
+<h2>9. Advertising</h2>
+<p>Rulix shows no ads, shares no data with ad networks, and does not use IDFA or request ATT permission.</p>
+
+<h2>10. Changes</h2>
+<p>We may update this policy as needed. Changes communicated via this page or in-app.</p>
+
+<h2>11. Contact</h2>
+<p>Harun Can Ayaz<br>Email: <a href="mailto:rulix.app@gmail.com">rulix.app@gmail.com</a><br>Istanbul, Turkey</p>
+</div>
+
+<div class="footer">© 2026 Harun Can Ayaz — Tüm hakları saklıdır / All rights reserved.</div>
+</body>
+</html>
