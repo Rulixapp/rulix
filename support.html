@@ -198,21 +198,21 @@
         <h2 id="contact-title">Get in Touch</h2>
         <p id="contact-desc">Have a question, bug report, or feature request?<br>We typically respond within 24–48 hours.</p>
       </div>
-      <a class="contact-btn" href="mailto:rulix.app@gmail.com">✉ rulix.app@gmail.com</a>
+      <a class="contact-btn" id="contact-email-btn">✉ rulix.app@gmail.com</a>
     </div>
   </section>
 
   <section>
     <p class="section-label" id="lbl-tools">Available Tools</p>
     <div class="tools-grid">
-      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name">Ruler</div><div class="tool-badge" id="badge-free-1">FREE</div></div></div>
-      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name">Level</div><div class="tool-badge" id="badge-free-2">FREE</div></div></div>
-      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name">Protractor</div><div class="tool-badge" id="badge-free-3">FREE</div></div></div>
-      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name">Compass</div><div class="tool-badge" id="badge-free-4">FREE</div></div></div>
-      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name">AR Measure</div><div class="tool-badge" id="badge-pro-1">PRO</div></div></div>
-      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name">Noise Meter</div><div class="tool-badge" id="badge-pro-2">PRO</div></div></div>
-      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name">Speedometer</div><div class="tool-badge" id="badge-pro-3">PRO</div></div></div>
-      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name">Vibration Meter</div><div class="tool-badge" id="badge-pro-4">PRO</div></div></div>
+      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name" id="tool-1">Ruler</div><div class="tool-badge" id="badge-free-1">FREE</div></div></div>
+      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name" id="tool-2">Spirit Level</div><div class="tool-badge" id="badge-free-2">FREE</div></div></div>
+      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name" id="tool-3">Protractor</div><div class="tool-badge" id="badge-free-3">FREE</div></div></div>
+      <div class="tool-chip"><div class="tool-dot free"></div><div><div class="tool-name" id="tool-4">Compass</div><div class="tool-badge" id="badge-free-4">FREE</div></div></div>
+      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name" id="tool-5">Camera Meter</div><div class="tool-badge" id="badge-pro-1">PRO</div></div></div>
+      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name" id="tool-6">Noise Meter</div><div class="tool-badge" id="badge-pro-2">PRO</div></div></div>
+      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name" id="tool-7">Speedometer</div><div class="tool-badge" id="badge-pro-3">PRO</div></div></div>
+      <div class="tool-chip"><div class="tool-dot pro"></div><div><div class="tool-name" id="tool-8">Vibration Meter</div><div class="tool-badge" id="badge-pro-4">PRO</div></div></div>
     </div>
   </section>
 
@@ -233,11 +233,12 @@
         contact: "Contact",
         contactTitle: "Get in Touch",
         contactDesc: "Have a question, bug report, or feature request?<br>We typically respond within 24–48 hours.",
-        tools: "Available Tools",
+        toolsLabel: "Available Tools",
         faq: "FAQ",
         privacy: "Privacy Policy",
         freeBadge: "FREE",
         proBadge: "PRO",
+        toolNames: ["Ruler", "Spirit Level", "Protractor", "Compass", "Camera Meter", "Noise Meter", "Speedometer", "Vibration Meter"],
         faqs: [
           ["How do I upgrade to Rulix Pro?", "Open the app and tap the lock icon on any premium tool, or go to Settings → Rulix Pro. You can choose a monthly ($2.99) or yearly ($14.99) subscription. Payment is charged to your Apple ID."],
           ["How do I restore my purchase?", "Go to Settings → Rulix Pro → Restore Purchases. Make sure you’re signed in with the same Apple ID used for the original purchase."],
@@ -253,11 +254,12 @@
         contact: "İletişim",
         contactTitle: "Bize Ulaşın",
         contactDesc: "Sorunuz, hata raporunuz veya özellik isteğiniz mi var?<br>Genellikle 24–48 saat içinde yanıt veriyoruz.",
-        tools: "Mevcut Araçlar",
+        toolsLabel: "Mevcut Araçlar",
         faq: "Sık Sorulan Sorular",
         privacy: "Gizlilik Politikası",
         freeBadge: "ÜCRETSİZ",
         proBadge: "PRO",
+        toolNames: ["Cetvel", "Su Terazisi", "Açıölçer", "Pusula", "Kamera Metre", "Gürültü Ölçer", "Hız Ölçer", "Titreşim Ölçer"],
         faqs: [
           ["Rulix Pro’ya nasıl yükseltebilirim?", "Uygulamayı açın ve herhangi bir premium araçtaki kilit simgesine dokunun ya da Ayarlar → Rulix Pro kısmına gidin. Aylık veya yıllık abonelik seçebilirsiniz. Ödeme Apple ID’nize faturalandırılır."],
           ["Satın alımımı nasıl geri yüklerim?", "Ayarlar → Rulix Pro → Satın Alımları Geri Yükle adımlarını izleyin. Orijinal satın alımda kullandığınız Apple ID ile giriş yaptığınızdan emin olun."],
@@ -281,23 +283,21 @@
       });
     }
 
-    function setLang(lang) {
+    // Set email link via JS to avoid Cloudflare obfuscation
+    (function() {
+      var btn = document.getElementById('contact-email-btn');
+      if (btn) btn.href = 'mai' + 'lto:rulix.app' + '@' + 'gmail.com';
+    })();
+
+    window.setLang = function(lang) {
       const t = T[lang];
       document.getElementById('tagline').textContent = t.tagline;
       document.getElementById('lbl-contact').textContent = t.contact;
       document.getElementById('contact-title').textContent = t.contactTitle;
       document.getElementById('contact-desc').innerHTML = t.contactDesc;
-      document.getElementById('lbl-tools').textContent = t.tools;
+      document.getElementById('lbl-tools').textContent = t.toolsLabel;
       document.getElementById('lbl-faq').textContent = t.faq;
       document.getElementById('footer-privacy').textContent = t.privacy;
       ['1','2','3','4'].forEach(n => { document.getElementById('badge-free-' + n).textContent = t.freeBadge; });
       ['1','2','3','4'].forEach(n => { document.getElementById('badge-pro-' + n).textContent = t.proBadge; });
-      renderFaq(lang);
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
-    }
-
-    renderFaq('en');
-  </script>
-</body>
-</html>
+      t.toolNames.forEach((name, i) => { document.getElementById('tool-' + (i+1)).textContent = name; });
