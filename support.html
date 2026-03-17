@@ -198,7 +198,7 @@
         <h2 id="contact-title">Get in Touch</h2>
         <p id="contact-desc">Have a question, bug report, or feature request?<br>We typically respond within 24–48 hours.</p>
       </div>
-      <a class="contact-btn" id="contact-email-btn">✉ rulix.app@gmail.com</a>
+      <a class="contact-btn" href="/cdn-cgi/l/email-protection#d3a1a6bfbaabfdb2a3a393b4beb2babffdb0bcbe">✉ <span class="__cf_email__" data-cfemail="9eecebf2f7e6b0ffeeeedef9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a>
     </div>
   </section>
 
@@ -226,19 +226,18 @@
     <a href="https://rulixapp.github.io/rulix/privacy.html" id="footer-privacy">Privacy Policy</a>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const T = {
       en: {
         tagline: "Support & Help Center",
         contact: "Contact",
         contactTitle: "Get in Touch",
         contactDesc: "Have a question, bug report, or feature request?<br>We typically respond within 24–48 hours.",
-        toolsLabel: "Available Tools",
+        tools: "Available Tools",
         faq: "FAQ",
         privacy: "Privacy Policy",
         freeBadge: "FREE",
         proBadge: "PRO",
-        toolNames: ["Ruler", "Spirit Level", "Protractor", "Compass", "Camera Meter", "Noise Meter", "Speedometer", "Vibration Meter"],
         faqs: [
           ["How do I upgrade to Rulix Pro?", "Open the app and tap the lock icon on any premium tool, or go to Settings → Rulix Pro. You can choose a monthly ($2.99) or yearly ($14.99) subscription. Payment is charged to your Apple ID."],
           ["How do I restore my purchase?", "Go to Settings → Rulix Pro → Restore Purchases. Make sure you’re signed in with the same Apple ID used for the original purchase."],
@@ -254,12 +253,11 @@
         contact: "İletişim",
         contactTitle: "Bize Ulaşın",
         contactDesc: "Sorunuz, hata raporunuz veya özellik isteğiniz mi var?<br>Genellikle 24–48 saat içinde yanıt veriyoruz.",
-        toolsLabel: "Mevcut Araçlar",
+        tools: "Mevcut Araçlar",
         faq: "Sık Sorulan Sorular",
         privacy: "Gizlilik Politikası",
         freeBadge: "ÜCRETSİZ",
         proBadge: "PRO",
-        toolNames: ["Cetvel", "Su Terazisi", "Açıölçer", "Pusula", "Kamera Metre", "Gürültü Ölçer", "Hız Ölçer", "Titreşim Ölçer"],
         faqs: [
           ["Rulix Pro’ya nasıl yükseltebilirim?", "Uygulamayı açın ve herhangi bir premium araçtaki kilit simgesine dokunun ya da Ayarlar → Rulix Pro kısmına gidin. Aylık veya yıllık abonelik seçebilirsiniz. Ödeme Apple ID’nize faturalandırılır."],
           ["Satın alımımı nasıl geri yüklerim?", "Ayarlar → Rulix Pro → Satın Alımları Geri Yükle adımlarını izleyin. Orijinal satın alımda kullandığınız Apple ID ile giriş yaptığınızdan emin olun."],
@@ -283,21 +281,31 @@
       });
     }
 
-    // Set email link via JS to avoid Cloudflare obfuscation
-    (function() {
-      var btn = document.getElementById('contact-email-btn');
-      if (btn) btn.href = 'mai' + 'lto:rulix.app' + '@' + 'gmail.com';
-    })();
-
-    window.setLang = function(lang) {
+    function setLang(lang) {
       const t = T[lang];
       document.getElementById('tagline').textContent = t.tagline;
       document.getElementById('lbl-contact').textContent = t.contact;
       document.getElementById('contact-title').textContent = t.contactTitle;
       document.getElementById('contact-desc').innerHTML = t.contactDesc;
-      document.getElementById('lbl-tools').textContent = t.toolsLabel;
+      document.getElementById('lbl-tools').textContent = t.tools;
       document.getElementById('lbl-faq').textContent = t.faq;
       document.getElementById('footer-privacy').textContent = t.privacy;
       ['1','2','3','4'].forEach(n => { document.getElementById('badge-free-' + n).textContent = t.freeBadge; });
       ['1','2','3','4'].forEach(n => { document.getElementById('badge-pro-' + n).textContent = t.proBadge; });
-      t.toolNames.forEach((name, i) => { document.getElementById('tool-' + (i+1)).textContent = name; });
+      var names = {
+        en: ["Ruler","Spirit Level","Protractor","Compass","Camera Meter","Noise Meter","Speedometer","Vibration Meter"],
+        tr: ["Cetvel","Su Terazisi","Açıölçer","Pusula","Kamera Metre","Gürültü Ölçer","Hız Ölçer","Titreşim Ölçer"]
+      };
+      names[lang].forEach(function(name, i) {
+        var el = document.getElementById('tool-' + (i+1));
+        if (el) el.textContent = name;
+      });
+      renderFaq(lang);
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    }
+
+    renderFaq('en');
+  </script>
+</body>
+</html>
